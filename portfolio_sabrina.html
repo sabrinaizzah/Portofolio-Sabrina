@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Portofolio SABRINA IZZAH RAMADHANI — Mahasiswa D-IV Sistem Informasi Bisnis, Politeknik Negeri Malang.">
+  <title>SABRINA IZZAH RAMADHANI | Portofolio</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121a2e;
+      --panel2: #172139;
+      --text: #f4f6ff;
+      --muted: #aab4cd;
+      --accent: #9b8cff;
+      --accent2: #63e6be;
+      --line: rgba(255, 255, 255, .11);
+      --shadow: 0 20px 55px rgba(0, 0, 0, .22)
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: radial-gradient(ellipse at 85% 5%, rgba(155, 140, 255, .14), transparent 35%), var(--bg);
+      color: var(--text);
+      line-height: 1.65
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    button {
+      font: inherit
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 40px));
+      margin: auto
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(11, 16, 32, .82);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line)
+    }
+
+    .nav {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -.04em;
+      font-size: 1.08rem
+    }
+
+    .brand span {
+      color: var(--accent)
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+      align-items: center
+    }
+
+    nav a {
+      font-size: .9rem;
+      color: var(--muted);
+      transition: .2s
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--text)
+    }
+
+    .menu-btn {
+      display: none;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--text);
+      padding: 8px 12px;
+      border-radius: 10px
+    }
+
+    .hero {
+      padding: 92px 0 76px;
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 54px;
+      align-items: center;
+      min-height: 590px
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, .035);
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: .83rem;
+      margin-bottom: 24px
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      background: var(--accent2);
+      border-radius: 50%;
+      box-shadow: 0 0 15px var(--accent2)
+    }
+
+    h1 {
+      font-size: clamp(2.7rem, 6vw, 4.9rem);
+      line-height: 1.04;
+      letter-spacing: -.065em;
+      max-width: 720px
+    }
+
+    .gradient {
+      background: linear-gradient(100deg, var(--accent), #d1caff 55%, var(--accent2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.07rem;
+      max-width: 600px;
+      margin: 24px 0 30px
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border-radius: 12px;
+      padding: 12px 18px;
+      font-weight: 700;
+      font-size: .92rem;
+      border: 1px solid var(--line);
+      transition: transform .2s, background .2s
+    }
+
+    .btn:hover {
+      transform: translateY(-2px)
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #111329;
+      border-color: transparent
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, .035)
+    }
+
+    .hero-photo-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-photo-wrap::before {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(155, 140, 255, .32), transparent 70%);
+      filter: blur(45px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .hero-photo-circle {
+      position: relative;
+      z-index: 1;
+      width: clamp(250px, 28vw, 340px);
+      height: clamp(250px, 28vw, 340px);
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      border: 4px solid rgba(155, 140, 255, .45);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, .45), 0 0 40px rgba(155, 140, 255, .25);
+      background: var(--panel);
+      transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+    }
+
+    .hero-photo-circle:hover {
+      transform: scale(1.025);
+      border-color: var(--accent2);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, .5), 0 0 50px rgba(99, 230, 190, .35);
+    }
+
+    section {
+      padding: 76px 0
+    }
+
+    .section-head {
+      margin-bottom: 30px
+    }
+
+    .kicker {
+      color: var(--accent2);
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-weight: 800
+    }
+
+    .section-head h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -.055em;
+      line-height: 1.15;
+      margin-top: 8px
+    }
+
+    .section-head p {
+      color: var(--muted);
+      max-width: 650px;
+      margin-top: 12px
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 24px
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 26px
+    }
+
+    .panel h3 {
+      font-size: 1.08rem;
+      margin-bottom: 12px
+    }
+
+    .panel p {
+      color: var(--muted)
+    }
+
+    .fact-list {
+      display: grid;
+      gap: 14px
+    }
+
+    .fact {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start
+    }
+
+    .fact-icon {
+      flex: 0 0 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      background: var(--panel2);
+      border-radius: 12px
+    }
+
+    .fact strong {
+      display: block;
+      font-size: .92rem
+    }
+
+    .fact span {
+      display: block;
+      color: var(--muted);
+      font-size: .85rem
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px
+    }
+
+    .skill-card {
+      padding: 23px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      transition: .22s
+    }
+
+    .skill-card:hover,
+    .project:hover {
+      transform: translateY(-4px);
+      border-color: rgba(155, 140, 255, .55)
+    }
+
+    .skill-icon {
+      font-size: 1.4rem;
+      margin-bottom: 14px
+    }
+
+    .skill-card h3 {
+      font-size: 1rem;
+      margin-bottom: 7px
+    }
+
+    .skill-card p {
+      font-size: .88rem;
+      color: var(--muted)
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 14px
+    }
+
+    .tag {
+      font-size: .75rem;
+      padding: 5px 9px;
+      border-radius: 8px;
+      color: #d9d3ff;
+      background: rgba(155, 140, 255, .12);
+      border: 1px solid rgba(155, 140, 255, .15)
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 20px
+    }
+
+    .project {
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, rgba(255, 255, 255, .035), transparent), var(--panel);
+      border-radius: 22px;
+      padding: 25px;
+      transition: .22s
+    }
+
+    .project-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 20px
+    }
+
+    .project-symbol {
+      height: 48px;
+      width: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: var(--panel2);
+      font-size: 1.35rem
+    }
+
+    .project-type {
+      font-size: .75rem;
+      color: var(--accent2);
+      border: 1px solid rgba(99, 230, 190, .2);
+      padding: 5px 9px;
+      border-radius: 999px
+    }
+
+    .project-img-box {
+      width: 100%;
+      height: 180px;
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      border: 1px solid var(--line);
+      background: var(--panel2);
+      position: relative;
+    }
+
+    .project-doc-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .3s ease;
+    }
+
+    .project:hover .project-doc-img {
+      transform: scale(1.03);
+    }
+
+    .project h3 {
+      font-size: 1.15rem;
+      margin-bottom: 8px
+    }
+
+    .project p {
+      font-size: .9rem;
+      color: var(--muted)
+    }
+
+    .project .tags {
+      margin-bottom: 18px
+    }
+
+    .project-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      flex-wrap: wrap;
+    }
+
+    .project-bottom small {
+      color: #8995b1;
+      font-size: .78rem;
+    }
+
+    .btn-doc {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      font-size: .8rem;
+      font-weight: 600;
+      border-radius: 8px;
+      background: rgba(155, 140, 255, .12);
+      border: 1px solid rgba(155, 140, 255, .3);
+      color: #d1caff;
+      transition: all .2s ease;
+    }
+
+    .btn-doc:hover {
+      background: var(--accent);
+      color: #111329;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(155, 140, 255, .35);
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 20px;
+    }
+
+    .cert-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 20px;
+      transition: transform .22s ease, border-color .22s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .cert-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(99, 230, 190, .5);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, .3);
+    }
+
+    .cert-card-img {
+      width: 100%;
+      height: 180px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      background: var(--panel2);
+      border: 1px solid var(--line);
+      position: relative;
+    }
+
+    .cert-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .3s ease;
+    }
+
+    .cert-card:hover .cert-card-img img {
+      transform: scale(1.03);
+    }
+
+    .cert-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .cert-issuer {
+      font-size: .75rem;
+      color: var(--accent2);
+      font-weight: 700;
+    }
+
+    .cert-year {
+      font-size: .75rem;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+
+    .cert-card h3 {
+      font-size: 1.02rem;
+      margin-bottom: 6px;
+      line-height: 1.35;
+    }
+
+    .cert-card p {
+      font-size: .84rem;
+      color: var(--muted);
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    .cert-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 14px;
+      font-size: .8rem;
+      font-weight: 600;
+      border-radius: 10px;
+      background: rgba(99, 230, 190, .12);
+      border: 1px solid rgba(99, 230, 190, .3);
+      color: var(--accent2);
+      transition: all .2s ease;
+      text-align: center;
+      width: 100%;
+    }
+
+    .cert-btn:hover {
+      background: var(--accent2);
+      color: #111329;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(99, 230, 190, .35);
+    }
+
+    .ig-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      font-size: .78rem;
+      font-weight: 600;
+      border-radius: 8px;
+      background: linear-gradient(135deg, rgba(225, 48, 108, .12), rgba(253, 29, 29, .08));
+      border: 1px solid rgba(225, 48, 108, .28);
+      color: #ff9ec3;
+      transition: all .2s ease;
+    }
+
+    .ig-link svg {
+      flex-shrink: 0;
+    }
+
+    .ig-link:hover {
+      background: linear-gradient(135deg, #e1306c, #fd1d1d);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(225, 48, 108, .35);
+    }
+
+    .learning {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px
+    }
+
+    .learn-item {
+      padding: 22px;
+      border-left: 2px solid var(--accent);
+      background: var(--panel);
+      border-radius: 0 16px 16px 0
+    }
+
+    .learn-item h3 {
+      font-size: 1rem;
+      margin-bottom: 5px
+    }
+
+    .learn-item p {
+      font-size: .88rem;
+      color: var(--muted)
+    }
+
+    .contact-box {
+      padding: 38px;
+      border-radius: 26px;
+      background: linear-gradient(120deg, rgba(155, 140, 255, .17), rgba(99, 230, 190, .08)), var(--panel);
+      border: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px
+    }
+
+    .contact-box h2 {
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      letter-spacing: -.05em;
+      line-height: 1.15
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      margin-top: 10px;
+      max-width: 540px
+    }
+
+    .contact-box .actions {
+      flex-shrink: 0
+    }
+
+    footer {
+      padding: 28px 0 36px;
+      color: var(--muted);
+      font-size: .82rem;
+      border-top: 1px solid var(--line)
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap
+    }
+
+    .note {
+      font-size: .82rem;
+      color: var(--muted);
+      margin-top: 18px
+    }
+
+    @media(max-width:800px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding-top: 65px;
+        min-height: auto
+      }
+
+      .hero-photo-circle {
+        width: 230px;
+        height: 230px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .contact-box {
+        align-items: flex-start;
+        flex-direction: column
+      }
+
+      .contact-box .actions {
+        flex-shrink: 1
+      }
+    }
+
+    @media(max-width:560px) {
+      .container {
+        width: min(100% - 28px, 1100px)
+      }
+
+      .nav {
+        height: 64px
+      }
+
+      .menu-btn {
+        display: block
+      }
+
+      nav {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        padding: 18px 22px 22px;
+        background: var(--bg);
+        border-bottom: 1px solid var(--line);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 17px
+      }
+
+      nav.open {
+        display: flex
+      }
+
+      .hero {
+        padding: 55px 0 50px
+      }
+
+      .hero p {
+        font-size: 1rem
+      }
+
+      section {
+        padding: 55px 0
+      }
+
+      .skills-grid,
+      .project-grid,
+      .learning {
+        grid-template-columns: 1fr
+      }
+
+      .panel,
+      .project,
+      .skill-card {
+        padding: 21px
+      }
+
+      .contact-box {
+        padding: 25px
+      }
+
+      .mini-grid {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      html {
+        scroll-behavior: auto
+      }
+
+      *,
+      *:before,
+      *:after {
+        transition: none !important
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home">Sabrina Izzah Ramadhani<span></span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Buka navigasi" aria-expanded="false">☰ Menu</button>
+      <nav id="navLinks" aria-label="Navigasi utama">
+        <a href="#tentang">Tentang</a><a href="#skill">Skill</a><a href="#proyek">Proyek</a><a
+          href="#sertifikat">Sertifikat</a><a href="#organisasi">Organisasi & Prestasi</a><a href="#kontak">Kontak</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container hero" id="home">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Mahasiswa D-IV Sistem Informasi Bisnis</div>
+        <h1><span class="gradient">Sabrina Izzah Ramadhani</span><br></h1>
+        <p>Mahasiswa D-IV Sistem Informasi Bisnis di Politeknik Negeri Malang memiliki ketertarikan pada bidang
+          Business Analysis dan Business Information Systems.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#proyek">Lihat Proyek <span aria-hidden="true">↗</span></a>
+          <a class="btn btn-secondary" href="#kontak">Kontak</a>
+        </div>
+      </div>
+      <div class="hero-photo-wrap">
+        <img src="foto-profil.jpg" alt="Foto Profil Sabrina Izzah Ramadhani" class="hero-photo-circle"
+          onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'340\' height=\'340\' viewBox=\'0 0 340 340\'><circle cx=\'170\' cy=\'170\' r=\'170\' fill=\'%23172139\'/><circle cx=\'170\' cy=\'135\' r=\'60\' fill=\'%239b8cff\' opacity=\'0.45\'/><path d=\'M60 295 C60 215 110 200 170 200 C230 200 280 215 280 295 Z\' fill=\'%239b8cff\' opacity=\'0.45\'/><text x=\'50%25\' y=\'285\' text-anchor=\'middle\' fill=\'%23aab4cd\' font-family=\'sans-serif\' font-size=\'14\' font-weight=\'600\'>foto-profil.jpg</text></svg>';">
+      </div>
+    </section>
+
+    <section id="tentang">
+      <div class="container">
+        <div class="section-head"><span class="kicker">01 / Tentang Saya</span>
+          <h2>Profil Singkat</h2>
+          <p>Mahasiswa D-IV Sistem Informasi Bisnis di Politeknik Negeri Malang yang memiliki ketertarikan pada bidang
+            Business Analysis dan Business Information Systems. Memiliki pengalaman dalam proyek akademik terkait
+            pengembangan aplikasi, analisis kebutuhan sistem, pengelolaan basis data, dan pemahaman proses bisnis.</p>
+          <p>Terampil dalam menyusun dokumentasi, bekerja secara kolaboratif, serta menyelesaikan tugas secara
+            terstruktur. Memiliki motivasi untuk mengembangkan kemampuan analisis dan memperoleh pengalaman profesional
+            melalui program magang.</p>
+        </div>
+        <div class="about-grid">
+          <div class="panel">
+            <h3>Fokus & Kemampuan Nonteknis</h3>
+            <p>Berkomitmen untuk terus belajar, berpikir analitis, dan berkolaborasi dalam menyelesaikan permasalahan
+              teknologi maupun sistem informasi bisnis secara terstruktur.</p>
+            <div class="tags">
+              <span class="tag">Berpikir Analitis</span>
+              <span class="tag">Pemecahan Masalah</span>
+              <span class="tag">Komunikasi</span>
+              <span class="tag">Kerja Sama Tim</span>
+              <span class="tag">Manajemen Waktu</span>
+            </div>
+          </div>
+          <div class="panel fact-list">
+            <div class="fact">
+              <div class="fact-icon">🎓</div>
+              <div>
+                <strong>Pendidikan</strong>
+                <span>Politeknik Negeri Malang — D-IV Sistem Informasi Bisnis (2024 – Sekarang)</span>
+                <span style="display:block; margin-top:4px; font-size:0.82rem; color:var(--muted);">Madrasah Aliyah
+                  Negeri (MAN) Sidoarjo (2021 – 2024)</span>
+              </div>
+            </div>
+            <div class="fact">
+              <div class="fact-icon">💼</div>
+              <div>
+                <strong>Bidang Minat</strong>
+                <span>Business Analysis & Business Information Systems</span>
+              </div>
+            </div>
+            <div class="fact">
+              <div class="fact-icon">📍</div>
+              <div>
+                <strong>Domisili & Kontak</strong>
+                <span>Sidoarjo, Jawa Timur · 08970929124</span>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skill">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">02 / Skill</span>
+          <h2>Kemampuan Teknis & Nonteknis</h2>
+          <p>
+            Kompetensi yang saya kembangkan melalui pembelajaran akademik,
+            dan berbagai proyek di bidang sistem informasi bisnis.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+
+          <article class="skill-card">
+            <div class="skill-icon">📊</div>
+            <h3>Business & Systems</h3>
+            <p>
+              Menganalisis proses bisnis dan kebutuhan sistem, menyusun dokumentasi, analisis data, serta evaluasi
+              fungsi perangkat lunak.
+            </p>
+            <div class="tags">
+              <span class="tag">Analisis Proses Bisnis</span>
+              <span class="tag">Analisis Kebutuhan Sistem</span>
+              <span class="tag">Analisis Data</span>
+              <span class="tag">Software Testing</span>
+              <span class="tag">COBIT 2019</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">🗄️</div>
+            <h3>Data & Database</h3>
+            <p>
+              Pengelolaan basis data relasional, manipulasi query SQL, spreadsheet modeling, serta proses integrasi ETL
+              data warehouse.
+            </p>
+            <div class="tags">
+              <span class="tag">MySQL</span>
+              <span class="tag">Microsoft Excel</span>
+              <span class="tag">Database Management</span>
+              <span class="tag">Pentaho ETL</span>
+              <span class="tag">Data Warehouse</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">💻</div>
+            <h3>Development Tools</h3>
+            <p>
+              Pengembangan aplikasi web dan antarmuka mobile, pengelolaan source code, dan kolaborasi repositori proyek.
+            </p>
+            <div class="tags">
+              <span class="tag">Laravel</span>
+              <span class="tag">PHP</span>
+              <span class="tag">Flutter</span>
+              <span class="tag">Dart</span>
+              <span class="tag">HTML</span>
+              <span class="tag">Java</span>
+              <span class="tag">GitHub</span>
+              <span class="tag">Git</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">🤝</div>
+            <h3>Nonteknis & Produktivitas</h3>
+            <p>
+              Keterampilan interpersonal dan profesional dalam menyelesaikan tugas dan berkolaborasi dalam tim secara
+              terstruktur
+            </p>
+            <div class="tags">
+              <span class="tag">Berpikir Analitis</span>
+              <span class="tag">Pemecahan Masalah</span>
+              <span class="tag">Komunikasi</span>
+              <span class="tag">Kerja Sama Tim</span>
+              <span class="tag">Manajemen Waktu</span>
+              <span class="tag">Microsoft Office</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="proyek">
+      <div class="container">
+        <div class="section-head"><span class="kicker">03 / Proyek Akademik</span>
+          <h2>Pengalaman Proyek Akademik</h2>
+          <p>Berbagai proyek akademik yang dikerjakan selama perkuliahan untuk mendukung implementasi teknologi dan
+            analisis sistem.</p>
+        </div>
+        <div class="project-grid">
+          <!-- Proyek 1: Website Lab NCS -->
+          <article class="project">
+            <div class="project-top">
+              <div class="project-symbol">🌐</div><span class="project-type">Web Development</span>
+            </div>
+            <div class="project-img-box">
+              <img src="ncs.jpg" alt="Dokumentasi Website Lab NCS" class="project-doc-img"
+                onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'220\' viewBox=\'0 0 400 220\'><rect width=\'400\' height=\'220\' fill=\'%23172139\'/><rect x=\'30\' y=\'30\' width=\'340\' height=\'160\' rx=\'10\' fill=\'none\' stroke=\'%239b8cff\' stroke-width=\'2\' stroke-dasharray=\'6 6\' opacity=\'0.4\'/><text x=\'50%25\' y=\'105\' text-anchor=\'middle\' fill=\'%239b8cff\' font-size=\'28\'>🌐</text><text x=\'50%25\' y=\'135\' text-anchor=\'middle\' fill=\'%23aab4cd\' font-family=\'sans-serif\' font-size=\'13\' font-weight=\'600\'>Bukti Foto: proyek-lab-ncs.jpg</text></svg>';">
+            </div>
+            <h3>Website Laboratorium Network Cyber Security</h3>
+            <p>Pengembangan website sebagai media informasi dan dokumentasi resmi laboratorium yang menyajikan profil,
+              struktur organisasi, kegiatan penelitian, serta fasilitas laboratorium.</p>
+            <div class="tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">PHP</span>
+              <span class="tag">JavaScript</span>
+            </div>
+            <div class="project-bottom">
+              <small>Proyek Pemrograman Web</small>
+              <a href="ncs.jpg" class="btn-doc" target="_blank" rel="noreferrer" title="Lihat foto dokumentasi penuh">
+                <span>Lihat Foto Penuh</span> ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- Proyek 2: Pemrograman Mobile -->
+          <article class="project">
+            <div class="project-top">
+              <div class="project-symbol">📱</div><span class="project-type">Mobile Application</span>
+            </div>
+            <div class="project-img-box">
+              <img src="mobile.jpg" alt="Dokumentasi Aplikasi Mobile" class="project-doc-img"
+                onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'220\' viewBox=\'0 0 400 220\'><rect width=\'400\' height=\'220\' fill=\'%23172139\'/><rect x=\'30\' y=\'30\' width=\'340\' height=\'160\' rx=\'10\' fill=\'none\' stroke=\'%239b8cff\' stroke-width=\'2\' stroke-dasharray=\'6 6\' opacity=\'0.4\'/><text x=\'50%25\' y=\'105\' text-anchor=\'middle\' fill=\'%239b8cff\' font-size=\'28\'>📱</text><text x=\'50%25\' y=\'135\' text-anchor=\'middle\' fill=\'%23aab4cd\' font-family=\'sans-serif\' font-size=\'13\' font-weight=\'600\'>Bukti Foto: proyek-mobile.jpg</text></svg>';">
+            </div>
+            <h3>Pengembangan Aplikasi Mobile</h3>
+            <p>Membangun antarmuka aplikasi mobile menggunakan Flutter berdasarkan kebutuhan dan rancangan aplikasi,
+              serta mengelola struktur proyek, komponen tampilan, dan aset untuk mendukung fungsi aplikasi.</p>
+            <div class="tags">
+              <span class="tag">Flutter</span>
+              <span class="tag">Dart</span>
+              <span class="tag">UI Layout</span>
+              <span class="tag">Asset Management</span>
+            </div>
+            <div class="project-bottom">
+              <small>Proyek Pemrograman Mobile</small>
+              <a href="mobile.jpg" class="btn-doc" target="_blank" rel="noreferrer"
+                title="Lihat foto dokumentasi penuh">
+                <span>Lihat Foto Penuh</span> ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- Proyek 3: Aplikasi POS (On Progress - tanpa foto bukti) -->
+          <article class="project">
+            <div class="project-top">
+              <div class="project-symbol">🛒</div><span class="project-type"
+                style="background:rgba(255,184,108,0.15); color:#ffb86c; border-color:rgba(255,184,108,0.3);">On
+                Progress</span>
+            </div>
+            <h3>Pengembangan Aplikasi Point of Sales (POS)</h3>
+            <p>Berkolaborasi dalam pengembangan aplikasi POS berbasis web untuk mendukung proses transaksi dan
+              pengelolaan produk. Mengerjakan bagian antarmuka kasir serta fitur autentikasi dan navigasi sesuai
+              pembagian tugas tim menggunakan Git dan GitHub.</p>
+            <div class="tags">
+              <span class="tag">Laravel</span>
+              <span class="tag">PHP</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">Git</span>
+              <span class="tag">GitHub</span>
+            </div>
+            <div class="project-bottom">
+              <small>Proyek Pemrograman Web Lanjut</small>
+              <span
+                style="font-size:0.75rem; color:#ffb86c; font-weight:600; display:inline-flex; align-items:center; gap:4px;">
+                ⏳ Sedang Berjalan
+              </span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Khusus Sertifikat -->
+    <section id="sertifikat">
+      <div class="container">
+        <div class="section-head"><span class="kicker">04 / Sertifikat</span>
+          <h2>Sertifikat & Penghargaan</h2>
+          <p>Koleksi sertifikat resmi kompetisi, riset ilmiah, kepanitiaan, dan pencapaian akademik yang pernah diraih.
+          </p>
+        </div>
+        <div class="cert-grid">
+          <!-- Sertifikat 1: AISEEF -->
+          <div class="cert-card">
+            <div class="cert-card-img">
+              <img src="aieef.jpg" alt="Sertifikat AISEEF 2023"
+                onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'240\' viewBox=\'0 0 400 240\'><rect width=\'400\' height=\'240\' fill=\'%23172139\'/><rect x=\'20\' y=\'20\' width=\'360\' height=\'200\' rx=\'10\' fill=\'none\' stroke=\'%2363e6be\' stroke-width=\'2\' stroke-dasharray=\'6 6\' opacity=\'0.4\'/><text x=\'50%25\' y=\'105\' text-anchor=\'middle\' fill=\'%2363e6be\' font-size=\'32\'>🥈</text><text x=\'50%25\' y=\'140\' text-anchor=\'middle\' fill=\'%23aab4cd\' font-family=\'sans-serif\' font-size=\'13\' font-weight=\'600\'>Foto: sertifikat-aiseef.jpg</text></svg>';">
+            </div>
+            <div class="cert-meta">
+              <span class="cert-issuer">AISEEF / IYSA</span>
+              <span class="cert-year">2023</span>
+            </div>
+            <h3 style="font-size:1.05rem; margin-bottom:8px;">Silver Medal - Industrial Application</h3>
+            <p style="font-size:0.86rem; color:var(--muted); margin-bottom:16px;">Peraih Medali perak (Silver Medal)
+              pada ajang Asean Innovative Science Environmental
+              And Entrepreneur Fair(AISEEF) pada kattegori Industrial Application.</p>
+            <div style="margin-top:auto;">
+              <a href="aieef.jpg" target="_blank" rel="noreferrer" class="cert-btn">
+                <span>Lihat Sertifikat</span> ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- Sertifikat 2: OSN Informatika -->
+          <div class="cert-card">
+            <div class="cert-card-img">
+              <img src="osn.jpg" alt="Sertifikat OSN Informatika 2022"
+                onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'240\' viewBox=\'0 0 400 240\'><rect width=\'400\' height=\'240\' fill=\'%23172139\'/><rect x=\'20\' y=\'20\' width=\'360\' height=\'200\' rx=\'10\' fill=\'none\' stroke=\'%2363e6be\' stroke-width=\'2\' stroke-dasharray=\'6 6\' opacity=\'0.4\'/><text x=\'50%25\' y=\'105\' text-anchor=\'middle\' fill=\'%2363e6be\' font-size=\'32\'>📜</text><text x=\'50%25\' y=\'140\' text-anchor=\'middle\' fill=\'%23aab4cd\' font-family=\'sans-serif\' font-size=\'13\' font-weight=\'600\'>Foto: sertifikat-osn.jpg</text></svg>';">
+            </div>
+            <div class="cert-meta">
+              <span class="cert-issuer">Puspresnas / OSN</span>
+              <span class="cert-year">2022</span>
+            </div>
+            <h3 style="font-size:1.05rem; margin-bottom:8px;">Peserta OSN Tingkat Kabupaten</h3>
+            <p style="font-size:0.86rem; color:var(--muted); margin-bottom:16px;">Olimpiade Sains Nasional (OSN) Bidang
+              Informatika jenjang SMA/MA tingkat Kabupaten/Kota.</p>
+            <div style="margin-top:auto;">
+              <a href="osn.jpg" target="_blank" rel="noreferrer" class="cert-btn">
+                <span>Lihat Sertifikat</span> ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- Sertifikat 3: MYRES -->
+          <div class="cert-card">
+            <div class="cert-card-img">
+              <img src="myress.jpg" alt="Sertifikat MYRES 2023"
+                onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'240\' viewBox=\'0 0 400 240\'><rect width=\'400\' height=\'240\' fill=\'%23172139\'/><rect x=\'20\' y=\'20\' width=\'360\' height=\'200\' rx=\'10\' fill=\'none\' stroke=\'%2363e6be\' stroke-width=\'2\' stroke-dasharray=\'6 6\' opacity=\'0.4\'/><text x=\'50%25\' y=\'105\' text-anchor=\'middle\' fill=\'%2363e6be\' font-size=\'32\'>🔬</text><text x=\'50%25\' y=\'140\' text-anchor=\'middle\' fill=\'%23aab4cd\' font-family=\'sans-serif\' font-size=\'13\' font-weight=\'600\'>Foto: sertifikat-myres.jpg</text></svg>';">
+            </div>
+            <div class="cert-meta">
+              <span class="cert-issuer">Kemenag RI / MYRES</span>
+              <span class="cert-year">2023</span>
+            </div>
+            <h3 style="font-size:1.05rem; margin-bottom:8px;">Lolos Seleksi Proposal Penelitian</h3>
+            <p style="font-size:0.86rem; color:var(--muted); margin-bottom:16px;">Madrasah Young Researchers Supercamp
+              (MYRES) tingkat nasional dalam pengembangan ide proposal riset ilmiah.</p>
+            <div style="margin-top:auto;">
+              <a href="myres.jpg" target="_blank" rel="noreferrer" class="cert-btn">
+                <span>Lihat Sertifikat</span> ↗
+              </a>
+            </div>
+          </div>
+
+          <!-- Sertifikat 4: Glocolis -->
+          <div class="cert-card">
+            <div class="cert-card-img">
+              <img src="glocolis.jpg" alt="Sertifikat Rohis Polinema"
+                onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'240\' viewBox=\'0 0 400 240\'><rect width=\'400\' height=\'240\' fill=\'%23172139\'/><rect x=\'20\' y=\'20\' width=\'360\' height=\'200\' rx=\'10\' fill=\'none\' stroke=\'%2363e6be\' stroke-width=\'2\' stroke-dasharray=\'6 6\' opacity=\'0.4\'/><text x=\'50%25\' y=\'105\' text-anchor=\'middle\' fill=\'%2363e6be\' font-size=\'32\'>📜</text><text x=\'50%25\' y=\'140\' text-anchor=\'middle\' fill=\'%23aab4cd\' font-family=\'sans-serif\' font-size=\'13\' font-weight=\'600\'>Foto: sertifikat-rohis.jpg</text></svg>';">
+            </div>
+            <div class="cert-meta">
+              <span class="cert-issuer">Glocolis / IYSA</span>
+              <span class="cert-year">2023</span>
+            </div>
+            <h3 style="font-size:1.05rem; margin-bottom:8px;">Bronze Medal - Global Competion For Life Science(Glocolis)
+              2023</h3>
+            <p style="font-size:0.86rem; color:var(--muted); margin-bottom:16px;">Penelitian Global Competion
+              For Life Science yang diselenggarakan melalui kolaborasi Universittas Brawijaya dan Indonesian
+              Young Scienttist Associattion.</p>
+            <div style="margin-top:auto;">
+              <a href="glocolis.jpg" target="_blank" rel="noreferrer" class="cert-btn">
+                <span>Lihat Sertifikat</span> ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="organisasi">
+      <div class="container">
+        <div class="section-head"><span class="kicker">05 / Organisasi & Prestasi</span>
+          <h2>Pengalaman Organisasi & Prestasi Akademik</h2>
+          <p>Keterlibatan aktif dalam organisasi kemahasiswaan, kepanitiaan, serta partisipasi dalam kompetisi dan riset
+            akademik</p>
+        </div>
+        <div class="learning">
+          <div class="learn-item">
+            <div
+              style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px; gap:8px;">
+              <h3 style="font-size:1.05rem; margin-bottom:0;">Rohis Polinema</h3>
+              <span class="project-type" style="font-size:0.75rem; white-space:nowrap;">2025 – Sekarang</span>
+            </div>
+            <div style="color:var(--accent); font-weight:700; font-size:0.88rem; margin-bottom:8px;">Anggota Kaderisasi
+              – Divisi Penjagaan</div>
+            <p>Berpartisipasi dalam kegiatan organisasi dan menjalankan tanggung jawab sesuai peran yang diberikan.
+              Berkolaborasi dengan anggota tim, berkomunikasi, dan membantu pelaksanaan program kerja.</p>
+            <div class="learn-actions">
+              <a href="https://www.instagram.com/p/DYT0GoTkZSX/?img_index=4&psln=ZmRxb21lNjR6M3pj" target="_blank"
+                rel="noreferrer" class="ig-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+                <span>Dokumentasi Instagram</span> ↗
+              </a>
+            </div>
+          </div>
+
+          <div class="learn-item">
+            <div
+              style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px; gap:8px;">
+              <h3 style="font-size:1.05rem; margin-bottom:0;">AISEEF</h3>
+              <span class="project-type" style="font-size:0.75rem; white-space:nowrap;">2023</span>
+            </div>
+            <div style="color:var(--accent); font-weight:700; font-size:0.88rem; margin-bottom:8px;">Asean Innovative
+              Science Environmental And Entrepreneur Fair
+            </div>
+            <p>Silver Medal Bidang Industrial Application dengan judul Peneliian "S-Hanger : Clothes Hanger Based On
+              Dampness Detection Technology"
+            </p>
+            <div class="learn-actions">
+              <a href="https://www.instagram.com/p/CotgWI-LGiZ/?img_index=3&xtok=MWp2dzZvd3dlbDVneQ==" target="_blank"
+                rel="noreferrer" class="ig-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+                <span>Dokumentasi Instagram</span> ↗
+              </a>
+            </div>
+          </div>
+
+          <div class="learn-item">
+            <div
+              style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px; gap:8px;">
+              <h3 style="font-size:1.05rem; margin-bottom:0;">Olimpiade Sains Nasional (OSN) – Bidang Informatika</h3>
+              <span class="project-type" style="font-size:0.75rem; white-space:nowrap;">2022</span>
+            </div>
+            <div style="color:var(--accent2); font-weight:700; font-size:0.88rem; margin-bottom:8px;">Peserta Tingkat
+              Kabupaten</div>
+            <p>Berpartisipasi sebagai peserta dalam kompetisi Olimpiade Sains Nasional (OSN) bidang Informatika tingkat
+              Kabupaten.</p>
+            <div class="learn-actions">
+              <a href="https://www.instagram.com/p/ChixaM9v2zb/?vrfl=MW0yNmxlcWFmZnFkcw==" target="_blank"
+                rel="noreferrer" class="ig-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+                <span>Dokumentasi Instagram</span> ↗
+              </a>
+            </div>
+          </div>
+
+          <div class="learn-item">
+            <div
+              style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:8px; gap:8px;">
+              <h3 style="font-size:1.05rem; margin-bottom:0;">Madrasah Young Researchers Supercamp (MYRES)</h3>
+              <span class="project-type" style="font-size:0.75rem; white-space:nowrap;">2023</span>
+            </div>
+            <div style="color:var(--accent2); font-weight:700; font-size:0.88rem; margin-bottom:8px;">Lolos Seleksi
+              Proposal Penelitian</div>
+            <p>Berhasil lolos seleksi proposal penelitian dalam program Madrasah Young Researchers Supercamp (MYRES).
+              Mengembangkan ide penelitian melalui penyusunan proposal yang mencakup identifikasi permasalahan dan
+              perencanaan penelitian.</p>
+            <div class="learn-actions">
+              <a href="https://share.google/DZQGq1eqDEgPNJGXV" target="_blank" rel="noreferrer" class="ig-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
+                <span>Dokumentasi</span> ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontak">
+      <div class="container">
+        <div class="contact-box">
+          <div><span class="kicker">06 / Kontak</span>
+            <h2>Mari terhubung dan<br>berkolaborasi!</h2>
+            <p>Terbuka untuk peluang program magang, bertukar pikiran, serta berkolaborasi dalam proyek Business
+              Analysis dan Sistem Informasi Bisnis.</p>
+            <div style="margin-top:16px; font-size:0.9rem; color:var(--muted); display:grid; gap:6px;">
+              <div>📍 Sidoarjo, Jawa Timur</div>
+              <div>📞 08970929124</div>
+              <div>✉️ sabrinaizzahramadhani@gmail.com</div>
+            </div>
+          </div>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://www.linkedin.com/in/sabrinaizzah" target="_blank"
+              rel="noreferrer">LinkedIn ↗</a>
+            <a class="btn btn-secondary" href="https://github.com/sabrinaizzah" target="_blank" rel="noreferrer">GitHub
+              ↗</a>
+            <button class="btn btn-secondary" id="emailBtn">Salin Email 📋</button>
+          </div>
+        </div>
+        <p class="note" id="contactNote"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner"><span>© <span id="year"></span> Sabrina Izzah Ramadhani</span><span>Dibuat
+        dengan HTML, CSS, dan JavaScript.</span></div>
+  </footer>
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('emailBtn').addEventListener('click', async () => {
+      const email = 'sabrinaizzahramadhani@gmail.com';
+      const note = document.getElementById('contactNote');
+      try {
+        await navigator.clipboard.writeText(email);
+        note.textContent = 'Alamat email sabrinaizzahramadhani@gmail.com berhasil disalin!';
+      } catch {
+        note.textContent = 'Silakan hubungi ke: sabrinaizzahramadhani@gmail.com';
+      }
+    });
+    const sections = [...document.querySelectorAll('main section[id]')];
+    const links = [...document.querySelectorAll('nav a')];
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) links.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
+      });
+    }, { rootMargin: '-35% 0px -55% 0px' });
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+
+</html>
